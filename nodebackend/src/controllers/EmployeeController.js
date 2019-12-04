@@ -77,7 +77,7 @@ controllers.list = async (req,res) => {
 controllers.create = async (req,res) => {
 
   // DATA parametros desde post
-  const {name, email, address, phone, role } = req.body;
+  const {name, email, address, phone, role, nome, senha } = req.body;
   console.log("ROle es ==>"+role)
   //create
   const data = await Employee.create({
@@ -86,7 +86,13 @@ controllers.create = async (req,res) => {
     address:address,
     phone:phone,
     roleId:role
-  })
+  })/*
+  const data = await administrador.create({
+    nome: nome,
+    email: email,
+    senha: senha
+  })*/
+  
   .then(function(data){
     return data;
   })
@@ -99,8 +105,14 @@ controllers.create = async (req,res) => {
     success:true,
     message:"Guardo exitosamente",
     data:data
-  })
+  }) 
 
 }
+/*
+controllers.create = async (req, res) =>{
+  const {nome, email, senha} = req.body;
+  const data= await administrador.create
+}
+*/
 
 module.exports = controllers;

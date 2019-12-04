@@ -4,6 +4,7 @@ var sequelize = require('./database');
 var Role = require('./Role');
 // name table
 var nametable = 'empleado';
+var ntAdmin = 'administrador';
 
 var Employee = sequelize.define(nametable,{
 
@@ -28,6 +29,17 @@ var Employee = sequelize.define(nametable,{
   }
 })
 
+var Administrador = sequelize.define(ntAdmin,{
+  id:{
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement:true
+  },
+  name: Sequelize.STRING,
+  email: Sequelize.STRING,
+  senha: Sequelize.STRING
+})
+
 Employee.belongsTo(Role);
 
-module.exports = Employee
+module.exports = Employee, Administrador
