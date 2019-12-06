@@ -9,6 +9,7 @@ class EditComponent extends React.Component{
 
   constructor(props){
     super(props);
+
     this.state = {
       dataEmployee:{},
       campName: "",
@@ -18,6 +19,14 @@ class EditComponent extends React.Component{
       stringRole:"",
       selectRole:0
     }
+    //real
+    /*
+    this.state = {
+      nome: "",
+      email: "",
+      senha: "",
+      
+    }*/
   }
 
   componentDidMount(){
